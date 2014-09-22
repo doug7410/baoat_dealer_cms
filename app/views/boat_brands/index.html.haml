@@ -1,0 +1,18 @@
+=render 'shared/page_heading', title: "Boat Brands"
+
+%table.table
+  %tr
+    %th Name
+    %th Logo
+    %th Description
+    %th Edit
+    %th Delete
+  - @brands.each do |brand| 
+    %tr
+      %td #{brand.name}
+      %td #{brand.logo}
+      %td #{brand.description}
+      %td 
+        =link_to 'Edit', '#', class: 'btn btn-warning'
+      %td
+        =link_to 'Delete', '#', class: 'btn btn-danger'
