@@ -10,7 +10,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap_form'
 gem 'autoprefixer-rails'
+gem 'devise'
 
 group :development do
   gem 'sqlite3'
@@ -27,6 +29,12 @@ group :development, :test do
   gem 'fabrication'
   gem 'faker'
   gem 'pry'
+  gem "letter_opener"
+end
+
+group :test do
+  gem 'database_cleaner', '1.2.0'
+  gem 'shoulda-matchers'
 end
 
 group :production do

@@ -81,7 +81,7 @@
           %a{:href => "#"} Link
         %li.dropdown
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            Dropdown
+            =current_user ? current_user.email : "sign in"
             %span.caret
           %ul.dropdown-menu{:role => "menu"}
             %li
@@ -92,6 +92,6 @@
               %a{:href => "#"} Something else here
             %li.divider
             %li
-              %a{:href => "#"} Separated link
+              =link_to 'Log Out' , destroy_user_session_path, method: :delete
     / /.navbar-collapse
   / /.container-fluid
