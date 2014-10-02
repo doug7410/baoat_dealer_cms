@@ -1,18 +1,29 @@
 =render 'shared/page_heading', title: "Boat Brands"
 
-%table.table
-  %tr
-    %th Name
-    %th Logo
-    %th Description
-    %th Edit
-    %th Delete
-  - @brands.each do |brand| 
-    %tr
-      %td #{brand.name}
-      %td #{brand.logo}
-      %td #{brand.description}
-      %td 
-        =link_to 'Edit', '#', class: 'btn btn-warning'
-      %td
-        =link_to 'Delete', '#', class: 'btn btn-danger'
+.row
+  .col-sm-10
+    %table.table
+      %tr
+        %th Name
+        %th Logo
+        %th Description
+        %th Edit
+        %th Delete
+      - @brands.each do |brand| 
+        %tr
+          %td #{brand.name}
+          %td #{brand.logo}
+          %td #{brand.description}
+          %td 
+            =link_to 'Edit', '#', class: 'btn btn-warning'
+          %td
+            =link_to 'Delete', '#', class: 'btn btn-danger'
+.row
+  .col-sm-10
+    %header
+      %h1 Add a Boat Brand
+    =bootstrap_form_for @boat_brand do |f| 
+      =f.text_field :name
+      =f.text_field :logo, label: "Logo Image"
+      =f.text_area :description
+      =f.submit "Add a brand"       

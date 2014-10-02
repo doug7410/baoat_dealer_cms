@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get '/admin', to: 'admin#index'
+  
+  root to: "admin#index"
+ 
+  devise_for :users
 
-  resources :boat_brands, only: [:index]
+  get 'log_in', to: 'users/sessions#new'
+  resources :boat_brands, only: [:index, :create]
 end
