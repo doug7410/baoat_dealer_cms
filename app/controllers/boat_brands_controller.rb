@@ -1,9 +1,9 @@
 class BoatBrandsController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_all_boat_brands, only: [:create, :index]
+  before_action :toggle_active_and_redirect, only: [:activate, :deactivate]
 
   def index
-    @active_boat_brands = BoatBrand.where(active: true).all
-    @inactive_boat_brands = BoatBrand.where(active: false).all
     @boat_brand = BoatBrand.new
   end
 
@@ -13,8 +13,8 @@ class BoatBrandsController < ApplicationController
       flash[:success] = "A new boat brands has been added"
       redirect_to boat_brands_path
     else
-      @brands = BoatBrand.all
-      @boat_brand = BoatBrand.new
+      flash[:warning] = "Please fix the error below."
+      @boat_brand = boat_brand
       render :index
     end
   end
@@ -38,13 +38,9 @@ class BoatBrandsController < ApplicationController
   end
 
   def activate
-    boat_brand.toggle_active!
-    redirect_to boat_brands_path
   end
 
   def deactivate
-    boat_brand.toggle_active!
-    redirect_to boat_brands_path
   end 
 
   def destroy
@@ -60,5 +56,15 @@ class BoatBrandsController < ApplicationController
 
   def boat_brand
     BoatBrand.find(params[:id])    
+  end
+
+  def get_all_boat_brands
+    @active_boat_brands = BoatBrand.where(active: true).all
+    @inactive_boat_brands = BoatBrand.where(active: false)
+  end
+
+  def toggle_active_and_redirect
+    boat_brand.toggle_active!
+    redirect_to boat_brands_path
   end
 end

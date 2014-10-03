@@ -59,20 +59,7 @@ describe BoatBrandsController do
         post :create, boat_brand: {name: "Carolina Skiff"}
         expect(response).to render_template :index
       end
-
-      it "sets the @brands to all the brands" do
-        carolina_skiff = Fabricate(:boat_brand)
-        lowe = Fabricate(:boat_brand)
-        post :create, boat_brand: {name: "Carolina Skiff"}
-        expect(assigns(:brands).count).to eq(2) 
-      end
-
-      it "sets @boat_brand to a new BoatBrand" do
-        post :create, boat_brand: {name: "Carolina Skiff"}
-        expect(assigns(:boat_brand)).to be_new_record
-        expect(assigns(:boat_brand)).to be_instance_of(BoatBrand)
-      end
-    end  
+    end
   end
 
   describe "GET edit" do
