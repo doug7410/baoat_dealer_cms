@@ -123,15 +123,15 @@ describe BoatBrandsController do
       let(:carolina_skiff) { Fabricate(:boat_brand, name: "Carolina Skiff")}
 
       it "renders the edit boat brand page" do
-        patch :update, id: carolina_skiff.id, boat_brand: {name: "Lowe", logo: "" }
+        patch :update, id: carolina_skiff.id, boat_brand: {name: "" }
         expect(response).to render_template :edit
       end
       it "sets the @boat_brand" do
-        patch :update, id: carolina_skiff.id, boat_brand: {name: "Lowe", logo: "" }
+        patch :update, id: carolina_skiff.id, boat_brand: {name: "" }
         expect(assigns(:boat_brand)).to eq(carolina_skiff)
       end
       it "sets the flash error message" do
-        patch :update, id: carolina_skiff.id, boat_brand: {name: "Lowe", logo: "" }
+        patch :update, id: carolina_skiff.id, boat_brand: {name: "" }
         expect(flash[:warning]).not_to be_nil
       end
     end
@@ -167,6 +167,22 @@ describe BoatBrandsController do
       carolina_skiff = Fabricate(:boat_brand, active: true)
       post :deactivate, id: carolina_skiff.id
       expect(carolina_skiff.reload.active).to eq(false) 
+    end
+  end
+
+  describe "DELETE destroy" do
+    before { sign_in Fabricate(:user) }
+
+    it "redirects to the boat brands page" do
+      carolina_skiff = Fabricate(:boat_brand)
+      delete :destroy, id: carolina_skiff.id
+      expect(response).to redirect_to boat_brands_path
+    end
+
+    it "deltes the boat brand" do 
+      carolina_skiff = Fabricate(:boat_brand)
+      delete :destroy, id: carolina_skiff.id
+      expect(BoatBrand.count).to eq(0) 
     end
   end
 

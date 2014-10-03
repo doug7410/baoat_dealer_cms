@@ -20,11 +20,11 @@ class BoatBrandsController < ApplicationController
   end
 
   def edit
-    @boat_brand = BoatBrand.find(params[:id])
+    @boat_brand = boat_brand
   end
 
   def update
-    @boat_brand = BoatBrand.find(params[:id])
+    @boat_brand = boat_brand
 
     @boat_brand.update(boat_brand_params)
     
@@ -38,20 +38,27 @@ class BoatBrandsController < ApplicationController
   end
 
   def activate
-    boat_brand = BoatBrand.find(params[:id])
-    boat_brand.update_column(:active, true)
+    boat_brand.toggle_active!
     redirect_to boat_brands_path
   end
 
   def deactivate
-    boat_brand = BoatBrand.find(params[:id])
-    boat_brand.update_column(:active, false)
+    boat_brand.toggle_active!
     redirect_to boat_brands_path
   end 
+
+  def destroy
+    boat_brand.destroy
+    redirect_to boat_brands_path
+  end
 
   private
 
   def boat_brand_params
     params.require(:boat_brand).permit(:name, :logo, :description)
   end 
+
+  def boat_brand
+    BoatBrand.find(params[:id])    
+  end
 end
