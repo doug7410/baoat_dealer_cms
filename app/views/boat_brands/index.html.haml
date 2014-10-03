@@ -1,5 +1,4 @@
 =render 'shared/page_heading', title: "Boat Brands"
-
 .row
   .col-sm-10
     %table.table
@@ -9,15 +8,22 @@
         %th Description
         %th Edit
         %th Delete
-      - @brands.each do |brand| 
+      - @active_boat_brands.each do |brand| 
         %tr
           %td #{brand.name}
           %td #{brand.logo}
           %td #{brand.description}
           %td 
-            =link_to 'Edit', '#', class: 'btn btn-warning'
+            =link_to 'Edit', edit_boat_brand_path(brand), class: 'btn btn-warning'
           %td
-            =link_to 'Delete', '#', class: 'btn btn-danger'
+            =link_to 'Move to trash', deactivate_boat_brand_path(brand), class: 'btn btn-danger', method: "POST"
+.trash
+  %h3 Inactive Boat Brands
+  %ul
+    -@inactive_boat_brands.each do |brand|
+      %li 
+        =brand.name
+        =link_to 'Remove from trash', activate_boat_brand_path(brand), class: 'btn-warning', method: "POST"
 .row
   .col-sm-10
     %header

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924183517) do
+ActiveRecord::Schema.define(version: 20141003154934) do
 
   create_table "boat_brands", force: true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140924183517) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active",      default: true
   end
 
   create_table "users", force: true do |t|

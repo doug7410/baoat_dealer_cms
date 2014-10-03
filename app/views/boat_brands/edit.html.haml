@@ -1,0 +1,10 @@
+=render 'shared/page_heading', title: "Boat Brands"
+.row
+  .col-sm-10
+    %header
+      %h1 Edit brand - #{@boat_brand.name}
+    =bootstrap_form_for @boat_brand do |f| 
+      =f.text_field :name
+      =f.text_field :logo, label: "Logo Image"
+      =f.text_area :description
+      =f.submit "Update" 
