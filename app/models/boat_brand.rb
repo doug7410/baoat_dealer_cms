@@ -1,5 +1,6 @@
 class BoatBrand < ActiveRecord::Base
 
+  has_many :boat_main_models
   validates_presence_of :name, :description
 
   mount_uploader :logo, LogoUploader

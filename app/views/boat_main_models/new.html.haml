@@ -1,0 +1,13 @@
+=render 'shared/page_heading', title: "Boat Main Models"
+
+.row
+  .col-sm-10
+    %header
+      %h2 Add a Boat Main Model
+    =bootstrap_form_for @boat_main_model do |f| 
+      =f.select :boat_brand_id, options_for_select(BoatBrand.all.map {|brand| [brand.name, brand.id] })
+      =f.text_field :name
+      =f.file_field :small_image, label: "Small Image"
+      =f.file_field :large_image, label: "Large Image"
+      =f.text_area :description
+      =f.submit "Add a brand"       
