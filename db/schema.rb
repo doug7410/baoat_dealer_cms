@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003154934) do
+ActiveRecord::Schema.define(version: 20141004053952) do
 
   create_table "boat_brands", force: true do |t|
     t.string   "name"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20141003154934) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active",      default: true
+  end
+
+  create_table "boat_main_models", force: true do |t|
+    t.string   "name"
+    t.string   "small_model_image"
+    t.string   "large_model_image"
+    t.text     "description"
+    t.integer  "boat_brand_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",            default: true
   end
 
   create_table "users", force: true do |t|

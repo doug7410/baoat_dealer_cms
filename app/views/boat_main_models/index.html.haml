@@ -1,0 +1,28 @@
+=render 'shared/page_heading', title: "Boat Models"
+
+=link_to "Create a New Model",  new_boat_main_model_path, class: "btn btn-success"
+
+.row
+  .col-sm-10
+    %table.table
+      %tr
+        %th Name
+      - @active_boat_main_models.each do |model| 
+        %tr
+          %td #{model.boat_brand}
+          %td #{model.name}
+          %td 
+            =image_tag model.small_image
+          %td 
+            =link_to 'Edit', edit_boat_main_model_path(model), class: 'btn btn-warning'
+          %td
+            =link_to 'Move to trash', deactivate_boat_main_model_path(model), class: 'btn btn-danger', method: "POST"
+-if @inactive_boat_main_models.any?
+  .trash
+    %h3 Inactive Boat Models
+    %ul
+      -@inactive_boat_models.each do |model|
+        %li 
+          =model.name
+          =link_to 'Remove from trash', activate_boat_main_model_path(model), class: 'btn-warning', method: "POST"
+          =link_to 'Delete Perminately', boat_main_model_path(model), class: 'btn-danger', method: "DELETE"
