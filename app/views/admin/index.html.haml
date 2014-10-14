@@ -1,1 +1,738 @@
-hello
+.page-content
+  #ace-settings-container.ace-settings-container
+    #ace-settings-btn.btn.btn-app.btn-xs.btn-warning.ace-settings-btn
+      %i.ace-icon.fa.fa-cog.bigger-150
+    #ace-settings-box.ace-settings-box.clearfix
+      .pull-left.width-50
+        / #section:settings.skins
+        .ace-settings-item
+          .pull-left
+            %select#skin-colorpicker.hide
+              %option{"data-skin" => "no-skin", :value => "#438EB9"} #438EB9
+              %option{"data-skin" => "skin-1", :value => "#222A2D"} #222A2D
+              %option{"data-skin" => "skin-2", :value => "#C6487E"} #C6487E
+              %option{"data-skin" => "skin-3", :value => "#D0D0D0"} #D0D0D0
+          %span   Choose Skin
+        / /section:settings.skins
+        / #section:settings.navbar
+        .ace-settings-item
+          %input#ace-settings-navbar.ace.ace-checkbox-2{:type => "checkbox"}/
+          %label.lbl{:for => "ace-settings-navbar"} Fixed Navbar
+        / /section:settings.navbar
+        / #section:settings.sidebar
+        .ace-settings-item
+          %input#ace-settings-sidebar.ace.ace-checkbox-2{:type => "checkbox"}/
+          %label.lbl{:for => "ace-settings-sidebar"} Fixed Sidebar
+        / /section:settings.sidebar
+        / #section:settings.breadcrumbs
+        .ace-settings-item
+          %input#ace-settings-breadcrumbs.ace.ace-checkbox-2{:type => "checkbox"}/
+          %label.lbl{:for => "ace-settings-breadcrumbs"} Fixed Breadcrumbs
+        / /section:settings.breadcrumbs
+        / #section:settings.rtl
+        .ace-settings-item
+          %input#ace-settings-rtl.ace.ace-checkbox-2{:type => "checkbox"}/
+          %label.lbl{:for => "ace-settings-rtl"} Right To Left (rtl)
+        / /section:settings.rtl
+        / #section:settings.container
+        .ace-settings-item
+          %input#ace-settings-add-container.ace.ace-checkbox-2{:type => "checkbox"}/
+          %label.lbl{:for => "ace-settings-add-container"}
+            Inside
+            %b .container
+        / /section:settings.container
+      / /.pull-left
+      .pull-left.width-50
+        / #section:basics/sidebar.options
+        .ace-settings-item
+          %input#ace-settings-hover.ace.ace-checkbox-2{:type => "checkbox"}/
+          %label.lbl{:for => "ace-settings-hover"} Submenu on Hover
+        .ace-settings-item
+          %input#ace-settings-compact.ace.ace-checkbox-2{:type => "checkbox"}/
+          %label.lbl{:for => "ace-settings-compact"} Compact Sidebar
+        .ace-settings-item
+          %input#ace-settings-highlight.ace.ace-checkbox-2{:type => "checkbox"}/
+          %label.lbl{:for => "ace-settings-highlight"} Alt. Active Item
+        / /section:basics/sidebar.options
+      / /.pull-left
+    / /.ace-settings-box
+  / /.ace-settings-container
+  / /section:settings.box
+  .page-content-area
+    .page-header
+      %h1
+        Dashboard
+        %small
+          %i.ace-icon.fa.fa-angle-double-right
+          overview & stats
+    / /.page-header
+    .row
+      .col-xs-12
+        / PAGE CONTENT BEGINS
+        .alert.alert-block.alert-success
+          %button.close{"data-dismiss" => "alert", :type => "button"}
+            %i.ace-icon.fa.fa-times
+          %i.ace-icon.fa.fa-check.green
+          Welcome to
+          = succeed "," do
+            %strong.green
+              Ace
+              %small (v1.3.1)
+        .row
+          .space-6
+          .col-sm-7.infobox-container
+            / #section:pages/dashboard.infobox
+            .infobox.infobox-green
+              .infobox-icon
+                %i.ace-icon.fa.fa-comments
+              .infobox-data
+                %span.infobox-data-number 32
+                .infobox-content comments + 2 reviews
+              / #section:pages/dashboard.infobox.stat
+              .stat.stat-success 8%
+              / /section:pages/dashboard.infobox.stat
+            .infobox.infobox-blue
+              .infobox-icon
+                %i.ace-icon.fa.fa-twitter
+              .infobox-data
+                %span.infobox-data-number 11
+                .infobox-content new followers
+              .badge.badge-success
+                +32%
+                %i.ace-icon.fa.fa-arrow-up
+            .infobox.infobox-pink
+              .infobox-icon
+                %i.ace-icon.fa.fa-shopping-cart
+              .infobox-data
+                %span.infobox-data-number 8
+                .infobox-content new orders
+              .stat.stat-important 4%
+            .infobox.infobox-red
+              .infobox-icon
+                %i.ace-icon.fa.fa-flask
+              .infobox-data
+                %span.infobox-data-number 7
+                .infobox-content experiments
+            .infobox.infobox-orange2
+              / #section:pages/dashboard.infobox.sparkline
+              .infobox-chart
+                %span.sparkline{"data-values" => "196,128,202,177,154,94,100,170,224"}
+              / /section:pages/dashboard.infobox.sparkline
+              .infobox-data
+                %span.infobox-data-number 6,251
+                .infobox-content pageviews
+              .badge.badge-success
+                7.2%
+                %i.ace-icon.fa.fa-arrow-up
+            .infobox.infobox-blue2
+              .infobox-progress
+                / #section:pages/dashboard.infobox.easypiechart
+                .easy-pie-chart.percentage{"data-percent" => "42", "data-size" => "46"}
+                  %span.percent> 42
+                  \%
+                / /section:pages/dashboard.infobox.easypiechart
+              .infobox-data
+                %span.infobox-text traffic used
+                .infobox-content
+                  %span.bigger-110 ~
+                  58GB remaining
+            / /section:pages/dashboard.infobox
+            .space-6
+            / #section:pages/dashboard.infobox.dark
+            .infobox.infobox-green.infobox-small.infobox-dark
+              .infobox-progress
+                / #section:pages/dashboard.infobox.easypiechart
+                .easy-pie-chart.percentage{"data-percent" => "61", "data-size" => "39"}
+                  %span.percent> 61
+                  \%
+                / /section:pages/dashboard.infobox.easypiechart
+              .infobox-data
+                .infobox-content Task
+                .infobox-content Completion
+            .infobox.infobox-blue.infobox-small.infobox-dark
+              / #section:pages/dashboard.infobox.sparkline
+              .infobox-chart
+                %span.sparkline{"data-values" => "3,4,2,3,4,4,2,2"}
+              / /section:pages/dashboard.infobox.sparkline
+              .infobox-data
+                .infobox-content Earnings
+                .infobox-content $32,000
+            .infobox.infobox-grey.infobox-small.infobox-dark
+              .infobox-icon
+                %i.ace-icon.fa.fa-download
+              .infobox-data
+                .infobox-content Downloads
+                .infobox-content 1,205
+            / /section:pages/dashboard.infobox.dark
+          .vspace-12-sm
+          .col-sm-5
+            .widget-box
+              .widget-header.widget-header-flat.widget-header-small
+                %h5.widget-title
+                  %i.ace-icon.fa.fa-signal
+                  Traffic Sources
+                .widget-toolbar.no-border
+                  .inline.dropdown-hover
+                    %button.btn.btn-minier.btn-primary
+                      This Week
+                      %i.ace-icon.fa.fa-angle-down.icon-on-right.bigger-110
+                    %ul.dropdown-menu.dropdown-menu-right.dropdown-125.dropdown-lighter.dropdown-close.dropdown-caret
+                      %li.active
+                        %a.blue{:href => "#"}
+                          %i.ace-icon.fa.fa-caret-right.bigger-110  
+                          This Week
+                      %li
+                        %a{:href => "#"}
+                          %i.ace-icon.fa.fa-caret-right.bigger-110.invisible  
+                          Last Week
+                      %li
+                        %a{:href => "#"}
+                          %i.ace-icon.fa.fa-caret-right.bigger-110.invisible  
+                          This Month
+                      %li
+                        %a{:href => "#"}
+                          %i.ace-icon.fa.fa-caret-right.bigger-110.invisible  
+                          Last Month
+              .widget-body
+                .widget-main
+                  / #section:plugins/charts.flotchart
+                  #piechart-placeholder
+                  / /section:plugins/charts.flotchart
+                  .hr.hr8.hr-double
+                  .clearfix
+                    / #section:custom/extra.grid
+                    .grid3
+                      %span.grey
+                        %i.ace-icon.fa.fa-facebook-square.fa-2x.blue
+                        \  likes
+                      %h4.bigger.pull-right 1,255
+                    .grid3
+                      %span.grey
+                        %i.ace-icon.fa.fa-twitter-square.fa-2x.purple
+                        \  tweets
+                      %h4.bigger.pull-right 941
+                    .grid3
+                      %span.grey
+                        %i.ace-icon.fa.fa-pinterest-square.fa-2x.red
+                        \  pins
+                      %h4.bigger.pull-right 1,050
+                    / /section:custom/extra.grid
+                / /.widget-main
+              / /.widget-body
+            / /.widget-box
+          / /.col
+        / /.row
+        / #section:custom/extra.hr
+        .hr.hr32.hr-dotted
+        / /section:custom/extra.hr
+        .row
+          .col-sm-5
+            .widget-box.transparent
+              .widget-header.widget-header-flat
+                %h4.widget-title.lighter
+                  %i.ace-icon.fa.fa-star.orange
+                  Popular Domains
+                .widget-toolbar
+                  %a{"data-action" => "collapse", :href => "#"}
+                    %i.ace-icon.fa.fa-chevron-up
+              .widget-body
+                .widget-main.no-padding
+                  %table.table.table-bordered.table-striped
+                    %thead.thin-border-bottom
+                      %tr
+                        %th
+                          %i.ace-icon.fa.fa-caret-right.blue>
+                          name
+                        %th
+                          %i.ace-icon.fa.fa-caret-right.blue>
+                          price
+                        %th.hidden-480
+                          %i.ace-icon.fa.fa-caret-right.blue>
+                          status
+                    %tbody
+                      %tr
+                        %td internet.com
+                        %td
+                          %small
+                            %s.red $29.99
+                          %b.green $19.99
+                        %td.hidden-480
+                          %span.label.label-info.arrowed-right.arrowed-in on sale
+                      %tr
+                        %td online.com
+                        %td
+                          %small
+                            %s.red
+                          %b.green $16.45
+                        %td.hidden-480
+                          %span.label.label-success.arrowed-in.arrowed-in-right approved
+                      %tr
+                        %td newnet.com
+                        %td
+                          %small
+                            %s.red
+                          %b.green $15.00
+                        %td.hidden-480
+                          %span.label.label-danger.arrowed pending
+                      %tr
+                        %td web.com
+                        %td
+                          %small
+                            %s.red $24.99
+                          %b.green $19.95
+                        %td.hidden-480
+                          %span.label.arrowed
+                            %s out of stock
+                      %tr
+                        %td domain.com
+                        %td
+                          %small
+                            %s.red
+                          %b.green $12.00
+                        %td.hidden-480
+                          %span.label.label-warning.arrowed.arrowed-right SOLD
+                / /.widget-main
+              / /.widget-body
+            / /.widget-box
+          / /.col
+          .col-sm-7
+            .widget-box.transparent
+              .widget-header.widget-header-flat
+                %h4.widget-title.lighter
+                  %i.ace-icon.fa.fa-signal
+                  Sale Stats
+                .widget-toolbar
+                  %a{"data-action" => "collapse", :href => "#"}
+                    %i.ace-icon.fa.fa-chevron-up
+              .widget-body
+                .widget-main.padding-4
+                  #sales-charts
+                / /.widget-main
+              / /.widget-body
+            / /.widget-box
+          / /.col
+        / /.row
+        .hr.hr32.hr-dotted
+        .row
+          .col-sm-6
+            #recent-box.widget-box.transparent
+              .widget-header
+                %h4.widget-title.lighter.smaller
+                  %i.ace-icon.fa.fa-rss.orange>
+                  RECENT
+                .widget-toolbar.no-border
+                  %ul#recent-tab.nav.nav-tabs
+                    %li.active
+                      %a{"data-toggle" => "tab", :href => "#task-tab"} Tasks
+                    %li
+                      %a{"data-toggle" => "tab", :href => "#member-tab"} Members
+                    %li
+                      %a{"data-toggle" => "tab", :href => "#comment-tab"} Comments
+              .widget-body
+                .widget-main.padding-4
+                  .tab-content.padding-8
+                    #task-tab.tab-pane.active
+                      %h4.smaller.lighter.green
+                        %i.ace-icon.fa.fa-list
+                        Sortable Lists
+                      / #section:pages/dashboard.tasks
+                      %ul#tasks.item-list
+                        %li.item-orange.clearfix
+                          %label.inline
+                            %input.ace{:type => "checkbox"}/
+                            %span.lbl Answering customer questions
+                          .pull-right.easy-pie-chart.percentage{"data-color" => "#ECCB71", "data-percent" => "42", "data-size" => "30"}
+                            %span.percent> 42
+                            \%
+                        %li.item-red.clearfix
+                          %label.inline
+                            %input.ace{:type => "checkbox"}/
+                            %span.lbl Fixing bugs
+                          / #section:custom/extra.action-buttons
+                          .pull-right.action-buttons
+                            %a.blue{:href => "#"}
+                              %i.ace-icon.fa.fa-pencil.bigger-130
+                            %span.vbar
+                            %a.red{:href => "#"}
+                              %i.ace-icon.fa.fa-trash-o.bigger-130
+                            %span.vbar
+                            %a.green{:href => "#"}
+                              %i.ace-icon.fa.fa-flag.bigger-130
+                          / /section:custom/extra.action-buttons
+                        %li.item-default.clearfix
+                          %label.inline
+                            %input.ace{:type => "checkbox"}/
+                            %span.lbl Adding new features
+                          / #section:elements.dropdown.hover
+                          .inline.pull-right.position-relative.dropdown-hover
+                            %button.btn.btn-minier.bigger.btn-primary
+                              %i.ace-icon.fa.fa-cog.icon-only.bigger-120
+                            %ul.dropdown-menu.dropdown-only-icon.dropdown-yellow.dropdown-caret.dropdown-close.dropdown-menu-right
+                              %li
+                                %a.tooltip-success{"data-rel" => "tooltip", :href => "#", :title => "Mark as done"}
+                                  %span.green
+                                    %i.ace-icon.fa.fa-check.bigger-110
+                              %li
+                                %a.tooltip-error{"data-rel" => "tooltip", :href => "#", :title => "Delete"}
+                                  %span.red
+                                    %i.ace-icon.fa.fa-trash-o.bigger-110
+                          / /section:elements.dropdown.hover
+                        %li.item-blue.clearfix
+                          %label.inline
+                            %input.ace{:type => "checkbox"}/
+                            %span.lbl Upgrading scripts used in template
+                        %li.item-grey.clearfix
+                          %label.inline
+                            %input.ace{:type => "checkbox"}/
+                            %span.lbl Adding new skins
+                        %li.item-green.clearfix
+                          %label.inline
+                            %input.ace{:type => "checkbox"}/
+                            %span.lbl Updating server software up
+                        %li.item-pink.clearfix
+                          %label.inline
+                            %input.ace{:type => "checkbox"}/
+                            %span.lbl Cleaning up
+                      / /section:pages/dashboard.tasks
+                    #member-tab.tab-pane
+                      / #section:pages/dashboard.members
+                      .clearfix
+                        .itemdiv.memberdiv
+                          .user
+                            %img{:alt => "Bob Doe's avatar", :src => "/assets/avatars/user.jpg"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Bob Doe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green 20 min
+                            %div
+                              %span.label.label-warning.label-sm pending
+                              .inline.position-relative
+                                %button.btn.btn-minier.btn-yellow.btn-no-border.dropdown-toggle{"data-position" => "auto", "data-toggle" => "dropdown"}
+                                  %i.ace-icon.fa.fa-angle-down.icon-only.bigger-120
+                                %ul.dropdown-menu.dropdown-only-icon.dropdown-yellow.dropdown-menu-right.dropdown-caret.dropdown-close
+                                  %li
+                                    %a.tooltip-success{"data-rel" => "tooltip", :href => "#", :title => "Approve"}
+                                      %span.green
+                                        %i.ace-icon.fa.fa-check.bigger-110
+                                  %li
+                                    %a.tooltip-warning{"data-rel" => "tooltip", :href => "#", :title => "Reject"}
+                                      %span.orange
+                                        %i.ace-icon.fa.fa-times.bigger-110
+                                  %li
+                                    %a.tooltip-error{"data-rel" => "tooltip", :href => "#", :title => "Delete"}
+                                      %span.red
+                                        %i.ace-icon.fa.fa-trash-o.bigger-110
+                        .itemdiv.memberdiv
+                          .user
+                            %img{:alt => "Joe Doe's avatar", :src => "/assets/avatars/avatar2.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Joe Doe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green 1 hour
+                            %div
+                              %span.label.label-warning.label-sm pending
+                              .inline.position-relative
+                                %button.btn.btn-minier.btn-yellow.btn-no-border.dropdown-toggle{"data-position" => "auto", "data-toggle" => "dropdown"}
+                                  %i.ace-icon.fa.fa-angle-down.icon-only.bigger-120
+                                %ul.dropdown-menu.dropdown-only-icon.dropdown-yellow.dropdown-menu-right.dropdown-caret.dropdown-close
+                                  %li
+                                    %a.tooltip-success{"data-rel" => "tooltip", :href => "#", :title => "Approve"}
+                                      %span.green
+                                        %i.ace-icon.fa.fa-check.bigger-110
+                                  %li
+                                    %a.tooltip-warning{"data-rel" => "tooltip", :href => "#", :title => "Reject"}
+                                      %span.orange
+                                        %i.ace-icon.fa.fa-times.bigger-110
+                                  %li
+                                    %a.tooltip-error{"data-rel" => "tooltip", :href => "#", :title => "Delete"}
+                                      %span.red
+                                        %i.ace-icon.fa.fa-trash-o.bigger-110
+                        .itemdiv.memberdiv
+                          .user
+                            %img{:alt => "Jim Doe's avatar", :src => "/assets/avatars/avatar.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Jim Doe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green 2 hour
+                            %div
+                              %span.label.label-warning.label-sm pending
+                              .inline.position-relative
+                                %button.btn.btn-minier.btn-yellow.btn-no-border.dropdown-toggle{"data-position" => "auto", "data-toggle" => "dropdown"}
+                                  %i.ace-icon.fa.fa-angle-down.icon-only.bigger-120
+                                %ul.dropdown-menu.dropdown-only-icon.dropdown-yellow.dropdown-menu-right.dropdown-caret.dropdown-close
+                                  %li
+                                    %a.tooltip-success{"data-rel" => "tooltip", :href => "#", :title => "Approve"}
+                                      %span.green
+                                        %i.ace-icon.fa.fa-check.bigger-110
+                                  %li
+                                    %a.tooltip-warning{"data-rel" => "tooltip", :href => "#", :title => "Reject"}
+                                      %span.orange
+                                        %i.ace-icon.fa.fa-times.bigger-110
+                                  %li
+                                    %a.tooltip-error{"data-rel" => "tooltip", :href => "#", :title => "Delete"}
+                                      %span.red
+                                        %i.ace-icon.fa.fa-trash-o.bigger-110
+                        .itemdiv.memberdiv
+                          .user
+                            %img{:alt => "Alex Doe's avatar", :src => "/assets/avatars/avatar5.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Alex Doe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green 3 hour
+                            %div
+                              %span.label.label-danger.label-sm blocked
+                        .itemdiv.memberdiv
+                          .user
+                            %img{:alt => "Bob Doe's avatar", :src => "/assets/avatars/avatar2.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Bob Doe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green 6 hour
+                            %div
+                              %span.label.label-success.label-sm.arrowed-in approved
+                        .itemdiv.memberdiv
+                          .user
+                            %img{:alt => "Susan's avatar", :src => "/assets/avatars/avatar3.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Susan
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green yesterday
+                            %div
+                              %span.label.label-success.label-sm.arrowed-in approved
+                        .itemdiv.memberdiv
+                          .user
+                            %img{:alt => "Phil Doe's avatar", :src => "/assets/avatars/avatar4.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Phil Doe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green 2 days ago
+                            %div
+                              %span.label.label-info.label-sm.arrowed-in.arrowed-in-right online
+                        .itemdiv.memberdiv
+                          .user
+                            %img{:alt => "Alexa Doe's avatar", :src => "/assets/avatars/avatar1.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Alexa Doe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green 3 days ago
+                            %div
+                              %span.label.label-success.label-sm.arrowed-in approved
+                      .space-4
+                      .center
+                        %i.ace-icon.fa.fa-users.fa-2x.green.middle
+                        \ 
+                        %a.btn.btn-sm.btn-white.btn-info{:href => "#"}
+                          See all members  
+                          %i.ace-icon.fa.fa-arrow-right
+                      .hr.hr-double.hr8
+                      / /section:pages/dashboard.members
+                    / /.#member-tab
+                    #comment-tab.tab-pane
+                      / #section:pages/dashboard.comments
+                      .comments
+                        .itemdiv.commentdiv
+                          .user
+                            %img{:alt => "Bob Doe's Avatar", :src => "/assets/avatars/avatar.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Bob Doe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.green 6 min
+                            .text
+                              %i.ace-icon.fa.fa-quote-left
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis …
+                          .tools
+                            .inline.position-relative
+                              %button.btn.btn-minier.bigger.btn-yellow.dropdown-toggle{"data-toggle" => "dropdown"}
+                                %i.ace-icon.fa.fa-angle-down.icon-only.bigger-120
+                              %ul.dropdown-menu.dropdown-only-icon.dropdown-yellow.dropdown-menu-right.dropdown-caret.dropdown-close
+                                %li
+                                  %a.tooltip-success{"data-rel" => "tooltip", :href => "#", :title => "Approve"}
+                                    %span.green
+                                      %i.ace-icon.fa.fa-check.bigger-110
+                                %li
+                                  %a.tooltip-warning{"data-rel" => "tooltip", :href => "#", :title => "Reject"}
+                                    %span.orange
+                                      %i.ace-icon.fa.fa-times.bigger-110
+                                %li
+                                  %a.tooltip-error{"data-rel" => "tooltip", :href => "#", :title => "Delete"}
+                                    %span.red
+                                      %i.ace-icon.fa.fa-trash-o.bigger-110
+                        .itemdiv.commentdiv
+                          .user
+                            %img{:alt => "Jennifer's Avatar", :src => "/assets/avatars/avatar1.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Jennifer
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.blue 15 min
+                            .text
+                              %i.ace-icon.fa.fa-quote-left
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis …
+                          .tools
+                            .action-buttons.bigger-125
+                              %a{:href => "#"}
+                                %i.ace-icon.fa.fa-pencil.blue
+                              %a{:href => "#"}
+                                %i.ace-icon.fa.fa-trash-o.red
+                        .itemdiv.commentdiv
+                          .user
+                            %img{:alt => "Joe's Avatar", :src => "/assets/avatars/avatar2.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Joe
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.orange 22 min
+                            .text
+                              %i.ace-icon.fa.fa-quote-left
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis …
+                          .tools
+                            .action-buttons.bigger-125
+                              %a{:href => "#"}
+                                %i.ace-icon.fa.fa-pencil.blue
+                              %a{:href => "#"}
+                                %i.ace-icon.fa.fa-trash-o.red
+                        .itemdiv.commentdiv
+                          .user
+                            %img{:alt => "Rita's Avatar", :src => "/assets/avatars/avatar3.png"}/
+                          .body
+                            .name
+                              %a{:href => "#"} Rita
+                            .time
+                              %i.ace-icon.fa.fa-clock-o
+                              %span.red 50 min
+                            .text
+                              %i.ace-icon.fa.fa-quote-left
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis …
+                          .tools
+                            .action-buttons.bigger-125
+                              %a{:href => "#"}
+                                %i.ace-icon.fa.fa-pencil.blue
+                              %a{:href => "#"}
+                                %i.ace-icon.fa.fa-trash-o.red
+                      .hr.hr8
+                      .center
+                        %i.ace-icon.fa.fa-comments-o.fa-2x.green.middle
+                        \ 
+                        %a.btn.btn-sm.btn-white.btn-info{:href => "#"}
+                          See all comments  
+                          %i.ace-icon.fa.fa-arrow-right
+                      .hr.hr-double.hr8
+                      / /section:pages/dashboard.comments
+                / /.widget-main
+              / /.widget-body
+            / /.widget-box
+          / /.col
+          .col-sm-6
+            .widget-box
+              .widget-header
+                %h4.widget-title.lighter.smaller
+                  %i.ace-icon.fa.fa-comment.blue
+                  Conversation
+              .widget-body
+                .widget-main.no-padding
+                  / #section:pages/dashboard.conversations
+                  .dialogs
+                    .itemdiv.dialogdiv
+                      .user
+                        %img{:alt => "Alexa's Avatar", :src => "/assets/avatars/avatar1.png"}/
+                      .body
+                        .time
+                          %i.ace-icon.fa.fa-clock-o
+                          %span.green 4 sec
+                        .name
+                          %a{:href => "#"} Alexa
+                        .text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
+                        .tools
+                          %a.btn.btn-minier.btn-info{:href => "#"}
+                            %i.icon-only.ace-icon.fa.fa-share
+                    .itemdiv.dialogdiv
+                      .user
+                        %img{:alt => "John's Avatar", :src => "/assets/avatars/avatar.png"}/
+                      .body
+                        .time
+                          %i.ace-icon.fa.fa-clock-o
+                          %span.blue 38 sec
+                        .name
+                          %a{:href => "#"} John
+                        .text Raw denim you probably haven't heard of them jean shorts Austin.
+                        .tools
+                          %a.btn.btn-minier.btn-info{:href => "#"}
+                            %i.icon-only.ace-icon.fa.fa-share
+                    .itemdiv.dialogdiv
+                      .user
+                        %img{:alt => "Bob's Avatar", :src => "/assets/avatars/user.jpg"}/
+                      .body
+                        .time
+                          %i.ace-icon.fa.fa-clock-o
+                          %span.orange 2 min
+                        .name
+                          %a{:href => "#"} Bob
+                          %span.label.label-info.arrowed.arrowed-in-right admin
+                        .text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
+                        .tools
+                          %a.btn.btn-minier.btn-info{:href => "#"}
+                            %i.icon-only.ace-icon.fa.fa-share
+                    .itemdiv.dialogdiv
+                      .user
+                        %img{:alt => "Jim's Avatar", :src => "/assets/avatars/avatar4.png"}/
+                      .body
+                        .time
+                          %i.ace-icon.fa.fa-clock-o
+                          %span.grey 3 min
+                        .name
+                          %a{:href => "#"} Jim
+                        .text Raw denim you probably haven't heard of them jean shorts Austin.
+                        .tools
+                          %a.btn.btn-minier.btn-info{:href => "#"}
+                            %i.icon-only.ace-icon.fa.fa-share
+                    .itemdiv.dialogdiv
+                      .user
+                        %img{:alt => "Alexa's Avatar", :src => "/assets/avatars/avatar1.png"}/
+                      .body
+                        .time
+                          %i.ace-icon.fa.fa-clock-o
+                          %span.green 4 min
+                        .name
+                          %a{:href => "#"} Alexa
+                        .text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        .tools
+                          %a.btn.btn-minier.btn-info{:href => "#"}
+                            %i.icon-only.ace-icon.fa.fa-share
+                  / /section:pages/dashboard.conversations
+                  %form
+                    .form-actions
+                      .input-group
+                        %input.form-control{:name => "message", :placeholder => "Type your message here ...", :type => "text"}/
+                        %span.input-group-btn
+                          %button.btn.btn-sm.btn-info.no-radius{:type => "button"}
+                            %i.ace-icon.fa.fa-share
+                            Send
+                / /.widget-main
+              / /.widget-body
+            / /.widget-box
+          / /.col
+        / /.row
+        / PAGE CONTENT ENDS
+      / /.col
+    / /.row
+  / /.page-content-area
