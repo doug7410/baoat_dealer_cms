@@ -4,7 +4,6 @@
       %i.ace-icon.fa.fa-cog.bigger-150
     #ace-settings-box.ace-settings-box.clearfix
       .pull-left.width-50
-        / #section:settings.skins
         .ace-settings-item
           .pull-left
             %select#skin-colorpicker.hide
@@ -13,37 +12,24 @@
               %option{"data-skin" => "skin-2", :value => "#C6487E"} #C6487E
               %option{"data-skin" => "skin-3", :value => "#D0D0D0"} #D0D0D0
           %span   Choose Skin
-        / /section:settings.skins
-        / #section:settings.navbar
         .ace-settings-item
           %input#ace-settings-navbar.ace.ace-checkbox-2{:type => "checkbox"}/
           %label.lbl{:for => "ace-settings-navbar"} Fixed Navbar
-        / /section:settings.navbar
-        / #section:settings.sidebar
         .ace-settings-item
           %input#ace-settings-sidebar.ace.ace-checkbox-2{:type => "checkbox"}/
           %label.lbl{:for => "ace-settings-sidebar"} Fixed Sidebar
-        / /section:settings.sidebar
-        / #section:settings.breadcrumbs
         .ace-settings-item
           %input#ace-settings-breadcrumbs.ace.ace-checkbox-2{:type => "checkbox"}/
           %label.lbl{:for => "ace-settings-breadcrumbs"} Fixed Breadcrumbs
-        / /section:settings.breadcrumbs
-        / #section:settings.rtl
         .ace-settings-item
           %input#ace-settings-rtl.ace.ace-checkbox-2{:type => "checkbox"}/
           %label.lbl{:for => "ace-settings-rtl"} Right To Left (rtl)
-        / /section:settings.rtl
-        / #section:settings.container
         .ace-settings-item
           %input#ace-settings-add-container.ace.ace-checkbox-2{:type => "checkbox"}/
           %label.lbl{:for => "ace-settings-add-container"}
             Inside
             %b .container
-        / /section:settings.container
-      / /.pull-left
       .pull-left.width-50
-        / #section:basics/sidebar.options
         .ace-settings-item
           %input#ace-settings-hover.ace.ace-checkbox-2{:type => "checkbox"}/
           %label.lbl{:for => "ace-settings-hover"} Submenu on Hover
@@ -53,11 +39,6 @@
         .ace-settings-item
           %input#ace-settings-highlight.ace.ace-checkbox-2{:type => "checkbox"}/
           %label.lbl{:for => "ace-settings-highlight"} Alt. Active Item
-        / /section:basics/sidebar.options
-      / /.pull-left
-    / /.ace-settings-box
-  / /.ace-settings-container
-  / /section:settings.box
   .page-content-area
     .page-header
       %h1
@@ -65,7 +46,6 @@
         %small
           %i.ace-icon.fa.fa-angle-double-right
           overview & stats
-    / /.page-header
     .row
       .col-xs-12
         / PAGE CONTENT BEGINS

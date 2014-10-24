@@ -20,11 +20,69 @@
       %span.btn.btn-danger
   / /.sidebar-shortcuts
   %ul.nav.nav-list
-    %li.active
+    %li
       %a{:href => "index.html"}
         %i.menu-icon.fa.fa-tachometer
         %span.menu-text Dashboard
       %b.arrow
+    %li
+      %a.dropdown-toggle{:href => "#"}
+        %i.menu-icon.fa.fa-tag
+        %span.menu-text Quote Sheets
+        %b.arrow.fa.fa-angle-down
+      %b.arrow
+      %ul.submenu
+        %li
+          %a.dropdown-toggle{:href => "#"}
+            %i.menu-icon.fa.fa-caret-right
+            Carolina Skiff
+            %b.arrow.fa.fa-angle-down
+          %b.arrow
+          %ul.submenu
+            %li
+              %a.dropdown-toggle{:href => "#"}
+                %i.menu-icon.fa.fa-plus
+                JV Series
+                %b.arrow.fa.fa-angle-down
+              %b.arrow
+              %ul.submenu
+                %li
+                  %a{:href => "#"}
+                    %i.menu-icon.fa.fa-eye
+                    JV13
+                  %b.arrow
+                %li
+                  %a{:href => "#"}
+                    %i.menu-icon.fa.fa-eye
+                    JV15
+                  %b.arrow
+                %li
+                  %a{:href => "#"}
+                    %i.menu-icon.fa.fa-eye
+                    JV17
+                  %b.arrow
+            %li
+              %a.dropdown-toggle{:href => "#"}
+                %i.menu-icon.fa.fa-plus
+                JVX Series
+                %b.arrow.fa.fa-angle-down
+              %b.arrow
+              %ul.submenu
+                %li
+                  %a{:href => "#"}
+                    %i.menu-icon.fa.fa-eye
+                    JVX16
+                  %b.arrow
+                %li
+                  %a{:href => "#"}
+                    %i.menu-icon.fa.fa-eye
+                    JVX18
+                  %b.arrow
+                %li
+                  %a{:href => "#"}
+                    %i.menu-icon.fa.fa-eye
+                    JVX20
+                  %b.arrow          
     %li
       %a.dropdown-toggle{:href => "#"}
         %i.menu-icon.fa.fa-desktop
@@ -224,7 +282,7 @@
             %i.menu-icon.fa.fa-caret-right
             Login & Register
           %b.arrow
-    %li
+    %li.active.open
       %a.dropdown-toggle{:href => "#"}
         %i.menu-icon.fa.fa-file-o
         %span.menu-text
@@ -255,7 +313,7 @@
             %i.menu-icon.fa.fa-caret-right
             Grid
           %b.arrow
-        %li
+        %li.active
           %a{:href => "blank.html"}
             %i.menu-icon.fa.fa-caret-right
             Blank Page
