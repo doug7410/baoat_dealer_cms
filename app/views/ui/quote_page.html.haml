@@ -17,87 +17,6 @@
                     .col-sm-6
                       .row
                         .col-xs-12
-                          %h4.header.section-header.blue Boat/Motor/Trailer Packages
-                          .row
-                            .col-xs-4.motor-group-container
-                              %h5 Evinrude
-                              .row
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    50HP ETEC
-                                  .motor-group-price $15,895
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    60HP ETEC
-                                  .motor-group-price $15,895
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    75HP ETEC
-                                  .motor-group-price $15,895  
-                            .col-xs-4.motor-group-container
-                              %h5 Mercury
-                              .row
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    50HP 4/S
-                                  .motor-group-price $15,895
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    60HP 4/S
-                                  .motor-group-price $15,895
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    75HP 4/S
-                                  .motor-group-price $15,895        
-                            .col-xs-4.motor-group-container
-                              %h5 Suzuki
-                              .row
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    50HP 4/S
-                                  .motor-group-price $15,895
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    60HP 4/S
-                                  .motor-group-price $15,895
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    75HP 4/S
-                                  .motor-group-price $15,895  
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    90HP 4/S
-                                  .motor-group-price $15,895    
-                            .col-xs-4.motor-group-container
-                              %h5 Yamaha
-                              .row
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    50HP 4/S
-                                  .motor-group-price $15,895
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    60HP 4/S
-                                  .motor-group-price $15,895
-                                .col-xs-12.motor-group
-                                  %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
-                                    75HP 4/S
-                                  .motor-group-price $15,895                 
-                      .row
-                        .col-xs-12
                           %h4.header.section-header.blue Standard Features
                           %ul.list-inline
                             %li Standard Console
@@ -130,6 +49,99 @@
                             %li Rigid Rub Rail W/insert
                             %li Swim Platform
                             %li Smart Tabs                     
+                      .row
+                        .col-xs-12
+                          %h4.header.section-header.blue Boat/Motor/Trailer Packages
+                          .row
+                            .col-xs-12.boat-only
+                              .row
+                                .col-xs-6.boat-only
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    Boat Only
+                                  .motor-group-price $15,895
+                            .col-xs-6.motor-group-container
+                              %h5 Evinrude
+                              .row
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    50HP ETEC
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    60HP ETEC
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    75HP ETEC
+                                  .motor-group-price $15,895  
+                            .col-xs-6.motor-group-container
+                              %h5 Mercury
+                              .row
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    50HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    60HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    75HP 4/S
+                                  .motor-group-price $15,895        
+                            .col-xs-6.motor-group-container
+                              %h5 Suzuki
+                              .row
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    50HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    60HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    75HP 4/S
+                                  .motor-group-price $15,895  
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    90HP 4/S
+                                  .motor-group-price $15,895    
+                            .col-xs-6.motor-group-container
+                              %h5 Yamaha
+                              .row
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    50HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    60HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    75HP 4/S
+                                  .motor-group-price $15,895
+                      .row
+                        .col-xs-12
+                          %h4.header.section-header.blue Total
+                          %input.total-box{"type" => "text"}  
+                          %p text text text text text text v vtext                     
                     / right container
                     .col-sm-6
                       %h4.header.section-header.blue Upgrade Options

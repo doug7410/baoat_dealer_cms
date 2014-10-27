@@ -15,8 +15,7 @@
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
             %img.nav-user-photo{:alt => "Jason's Photo", :src => "../assets/avatars/user.jpg"}/
             %span.user-info
-              %small Welcome,
-              Jason
+              %small Welcome
             %i.ace-icon.fa.fa-caret-down
           %ul.user-menu.dropdown-menu-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
             %li
@@ -29,6 +28,6 @@
                 Profile
             %li.divider
             %li
-              %a{:href => "#"}
+              = link_to destroy_user_session_path do  
                 %i.ace-icon.fa.fa-power-off
                 Logout

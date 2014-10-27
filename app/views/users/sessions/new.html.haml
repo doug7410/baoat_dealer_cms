@@ -39,29 +39,34 @@
               .position-relative
                 #login-box.login-box.visible.widget-box.no-border
                   .widget-body
-                    .widget-main
+                    .widget-main 
+                      = render 'layouts/messages'
                       %h4.header.blue.lighter.bigger
                         %i.ace-icon.fa.fa-coffee.green
                         Please Enter Your Information
                       .space-6
-                      %form
+                      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+                        = devise_error_messages!
+
                         %fieldset
                           %label.block.clearfix
                             %span.block.input-icon.input-icon-right
-                              %input.form-control{:placeholder => "Username", :type => "text"}/
+                              = f.email_field :email, class: 'form-control', autofocus: true, 'placeholder' => "email@example.com" 
                               %i.ace-icon.fa.fa-user
                           %label.block.clearfix
                             %span.block.input-icon.input-icon-right
-                              %input.form-control{:placeholder => "Password", :type => "password"}/
+                              = f.password_field :password, class: 'form-control', autocomplete: "off", 'placeholder' => 'Password'
                               %i.ace-icon.fa.fa-lock
                           .space
-                          .clearfix
-                            %label.inline
-                              %input.ace{:type => "checkbox"}/
-                              %span.lbl Remember Me
-                            %button.width-35.pull-right.btn.btn-sm.btn-primary{:type => "button"}
-                              %i.ace-icon.fa.fa-key
-                              %span.bigger-110 Login
+                          -if devise_mapping.rememberable?
+                            .clearfix
+                              %label.inline
+                                = f.check_box :remember_me, class: 'ace'
+                                %span.lbl Remember Me
+                              
+                              = button_tag( :class => 'width-35 pull-right btn btn-sm btn-primary' ) do
+                                %i.ace-icon.fa.fa-key
+                                Login 
                           .space-4
                     .toolbar.clearfix      
                       = render "users/shared/links"
@@ -134,26 +139,6 @@
                       %a.back-to-login-link{"data-target" => "#login-box", :href => "#"}
                         %i.ace-icon.fa.fa-arrow-left
                         Back to login
-                  / /.widget-body
-                / /.signup-box
-              / /.position-relative
-              .navbar-fixed-top.align-right
-                %br/
-                \ 
-                %a#btn-login-dark{:href => "#"} Dark
-                \ 
-                %span.blue /
-                \ 
-                %a#btn-login-blur{:href => "#"} Blur
-                \ 
-                %span.blue /
-                \ 
-                %a#btn-login-light{:href => "#"} Light
-                \     
-          / /.col
-        / /.row
-      / /.main-content
-    / /.main-container
     / basic scripts
     / [if !IE]>
     :javascript
@@ -174,32 +159,4 @@
         $('.widget-box.visible').removeClass('visible');//hide others
         $(target).addClass('visible');//show target
        });
-      });
-      
-      
-      
-      //you don't need this, just used for changing background
-      jQuery(function($) {
-       $('#btn-login-dark').on('click', function(e) {
-        $('body').attr('class', 'login-layout');
-        $('#id-text2').attr('class', 'white');
-        $('#id-company-text').attr('class', 'blue');
-        
-        e.preventDefault();
-       });
-       $('#btn-login-light').on('click', function(e) {
-        $('body').attr('class', 'login-layout light-login');
-        $('#id-text2').attr('class', 'grey');
-        $('#id-company-text').attr('class', 'blue');
-        
-        e.preventDefault();
-       });
-       $('#btn-login-blur').on('click', function(e) {
-        $('body').attr('class', 'login-layout blur-login');
-        $('#id-text2').attr('class', 'white');
-        $('#id-company-text').attr('class', 'light-blue');
-        
-        e.preventDefault();
-       });
-       
       });
