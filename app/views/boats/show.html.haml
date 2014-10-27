@@ -1,0 +1,404 @@
+.page-content
+  .page-content-area
+    .row
+      .col-xs-12
+        / PAGE CONTENT BEGINS
+        .row
+          .space-6
+          /main container
+          .col-sm-12
+            .widget-box
+              .widget-header
+                %h3.widget-title="#{@boat_brand.name} - #{@boat.year} #{@boat.name}"
+                %h3.widget-title Carolina Skiff - 2014 JVX18
+              .widget-body
+                .widget-main
+                  .row
+                    / left container 
+                    .col-sm-6
+                      .row
+                        .col-xs-12
+                          %h4.header.section-header.blue Standard Features
+                          %ul.list-inline
+                            %li Standard Console
+                            %li Binnacle Controls W/wiring Harness
+                            %li Console Cushion Set
+                            %li Full Instrumentation (speed, Fuel, Volt, Tach)
+                            %li Lockable Access Door
+                            %li Control Cables
+                            %li SS Steering Cables
+                            %li Tilt Helm
+                            %li Quick Disconnect Windshield
+                            %li SS Grab Rail
+                            %li SS Steering Wheel
+                            %li Horn
+                            %li (6) Flush Mounted Rod Holders
+                            %li Front Deck W/non Skid
+                            %li Lockable Starboard Lids
+                            %li Fuel Water Separator
+                            %li Rear Deck W/non Skid
+                            %li 18 Gallon Live Well
+                            %li 19 Gallon Fuel Tank W/fuel Fill
+                            %li Lockable Starboard Lids
+                            %li 70 QT Flip Flop Cooler Seat
+                            %li Cooler Frame
+                            %li (1) Bow Eye
+                            %li (2) Stern Eyes
+                            %li (4) Cleats
+                            %li 500 Gallon Bilge Pump
+                            %li LED Bow And Stern Lights
+                            %li Rigid Rub Rail W/insert
+                            %li Swim Platform
+                            %li Smart Tabs                     
+                      .row
+                        .col-xs-12
+                          %h4.header.section-header.blue Boat/Motor/Trailer Packages
+                          .row
+                            .col-xs-12.boat-only
+                              .row
+                                .col-xs-6.boat-only
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    Boat Only
+                                  .motor-group-price $15,895
+                            .col-xs-6.motor-group-container
+                              %h5 Evinrude
+                              .row
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    50HP ETEC
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    60HP ETEC
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    75HP ETEC
+                                  .motor-group-price $15,895  
+                            .col-xs-6.motor-group-container
+                              %h5 Mercury
+                              .row
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    50HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    60HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    75HP 4/S
+                                  .motor-group-price $15,895        
+                            .col-xs-6.motor-group-container
+                              %h5 Suzuki
+                              .row
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    50HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    60HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    75HP 4/S
+                                  .motor-group-price $15,895  
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    90HP 4/S
+                                  .motor-group-price $15,895    
+                            .col-xs-6.motor-group-container
+                              %h5 Yamaha
+                              .row
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    50HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    60HP 4/S
+                                  .motor-group-price $15,895
+                                .col-xs-12.motor-group
+                                  %label.motor-group-name 
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    75HP 4/S
+                                  .motor-group-price $15,895
+                      .row
+                        .col-xs-12
+                          %h4.header.section-header.blue Total
+                          %input.total-box{"type" => "text"}  
+                          %p text text text text text text v vtext                     
+                    / right container
+                    .col-sm-6
+                      %h4.header.section-header.blue Upgrade Options
+                      %table#sample-table-1.table.table-striped.table-bordered.table-hover
+                        %tbody
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:href => "#"} Sunbrella Bimini Top 65"
+                            %td $415
+                            %td $310
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Leaning Post w/Rod Holder and Foot Rest   
+                            %td $1,295 
+                            %td $975   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Leaning Post Backrest Only  
+                            %td $460 
+                            %td $360   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Power Grip Stainless Steel Wheel  
+                            %td $225 
+                            %td $165   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Trolling Motor Plug 12 volt   
+                            %td $140 
+                            %td $105   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Trolling Motor Plug 24 volt   
+                            %td $140 
+                            %td $105   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} 12/24 V Trolling Motor Panel w/Tilt   
+                            %td $385 
+                            %td $290   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Velcro rod savers (2 sets)  
+                            %td $95 
+                            %td $75   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} SS Split Bow Rails Set  
+                            %td $425 
+                            %td 
+                            %td300   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} SS Transom Rail Set   
+                            %td $325 
+                            %td $250   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} SS Side rails 4'  
+                            %td $290 
+                            %td $215   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Aluminum Bow Rail   
+                            %td $550 
+                            %td $450   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Aluminum Split Bow Rail Set   
+                            %td $700 
+                            %td $600   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Aluminum Split Transom Rail Set   
+                            %td $600 
+                            %td $450   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Aluminum 4' Side Rails  
+                            %td $550 
+                            %td $450
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Boat Cover  
+                            %td $230 
+                            %td %230   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Twin Battery System   
+                            %td $450 
+                            %td $450   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Rear Deck Padded Swivel Seat w/Base   
+                            %td $275 
+                            %td $205   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Seat Base Only  
+                            %td $90 
+                            %td $65   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Front Deck Padded Swivel Seat w/Base  
+                            %td $275 
+                            %td $205   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Saltwater Washdown  $
+                            %td $365 
+                            %td $275   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Console Live well w/Led light   
+                            %td $370 
+                            %td $280   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Maxi flow Recirculation System  
+                            %td $155 
+                            %td $115   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Transom Rod Holders (ea)  
+                            %td $100 
+                            %td $100   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Smart Tabs S.S.   
+                            %td $45 
+                            %td $35   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Welded Tow Eye  
+                            %td $850 
+                            %td $750   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Hull Color Full Side  
+                            %td $450 
+                            %td $350   
+                          %tr
+                            %td.center
+                              %label.position-relative
+                                %input.ace{:type => "checkbox"}/
+                                %span.lbl
+                            %td
+                              %a{:herf => "#"} Hull Color Complete Hull  
+                            %td $750 
+                            %td $675   
+                    

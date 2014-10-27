@@ -1,6 +1,7 @@
-class BoatBrand < ActiveRecord::Base
+class Brand < ActiveRecord::Base
 
   has_many :boat_main_models
+  has_many :boats
   validates_presence_of :name, :description
 
   mount_uploader :logo, LogoUploader
