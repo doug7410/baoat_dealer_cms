@@ -1,0 +1,7 @@
+- flash.each do |key, value|
+  %div{:class => "alert alert-#{key}"}
+    %button.close{"data-dismiss" => "alert", "type" => "button"} 
+      %i.ace-icon.fa.fa-times
+    %ul
+      %li
+        = value

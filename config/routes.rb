@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   post 'activate_boat_brand/:id', to: "boat_brands#activate", as: :activate_boat_brand
   post 'deactivate_boat_brand/:id', to: "boat_brands#deactivate", as: :deactivate_boat_brand
+
+  get 'ui(/:action)', controller: 'ui' 
 end
