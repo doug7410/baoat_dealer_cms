@@ -19,36 +19,8 @@
                         .col-xs-12
                           %h4.header.section-header.blue Standard Features
                           %ul.list-inline
-                            %li Standard Console
-                            %li Binnacle Controls W/wiring Harness
-                            %li Console Cushion Set
-                            %li Full Instrumentation (speed, Fuel, Volt, Tach)
-                            %li Lockable Access Door
-                            %li Control Cables
-                            %li SS Steering Cables
-                            %li Tilt Helm
-                            %li Quick Disconnect Windshield
-                            %li SS Grab Rail
-                            %li SS Steering Wheel
-                            %li Horn
-                            %li (6) Flush Mounted Rod Holders
-                            %li Front Deck W/non Skid
-                            %li Lockable Starboard Lids
-                            %li Fuel Water Separator
-                            %li Rear Deck W/non Skid
-                            %li 18 Gallon Live Well
-                            %li 19 Gallon Fuel Tank W/fuel Fill
-                            %li Lockable Starboard Lids
-                            %li 70 QT Flip Flop Cooler Seat
-                            %li Cooler Frame
-                            %li (1) Bow Eye
-                            %li (2) Stern Eyes
-                            %li (4) Cleats
-                            %li 500 Gallon Bilge Pump
-                            %li LED Bow And Stern Lights
-                            %li Rigid Rub Rail W/insert
-                            %li Swim Platform
-                            %li Smart Tabs                     
+                            - @boat.standard_features.each do |feature|
+                              %li=feature.name
                       .row
                         .col-xs-12
                           %h4.header.section-header.blue Boat/Motor/Trailer Packages
