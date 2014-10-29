@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe BoatMotorPackage do
   it { should validate_presence_of(:boat)}

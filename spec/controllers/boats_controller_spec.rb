@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 include Warden::Test::Helpers
 
 describe BoatsController do
@@ -40,8 +40,8 @@ describe BoatsController do
       mercury = Fabricate(:brand)
       motor1 = Fabricate(:motor, brand: evinrude)
       motor2 = Fabricate(:motor, brand: mercury)
-      package1 = Fabricate(:boat_motor_package, boat: jvx16, motor: motor1)
-      package2 = Fabricate(:boat_motor_package, boat: jvx16, motor: motor2)
+      package1 = Fabricate(:boat_motor_package, boat: jvx16, motor: motor1, brand: evinrude)
+      package2 = Fabricate(:boat_motor_package, boat: jvx16, motor: motor2, brand: mercury)
 
       get :show, id: jvx16.id
       expect(assigns(:package_motor_brands)).to eq([evinrude, mercury])

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141029013342) do
+ActiveRecord::Schema.define(version: 20141029144614) do
 
   create_table "boat_main_models", force: true do |t|
     t.string   "name"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20141029013342) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "year"
-    t.integer  "boat_only_price"
+    t.integer  "price_in_cents"
     t.text     "message"
     t.integer  "series_id"
   end
