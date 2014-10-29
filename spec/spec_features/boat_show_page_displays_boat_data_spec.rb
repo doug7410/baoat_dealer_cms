@@ -12,7 +12,7 @@ feature "User views a boat page and sees boat data" do
   end
 
   given(:carolina_skiff) { Fabricate(:brand) }
-  given(:jvx16) { Fabricate(:boat, brand: carolina_skiff, price_in_cents: 554000) } 
+  given(:jvx16) { Fabricate(:boat, brand: carolina_skiff, price_in_cents: 554000, message: "this is a message about the boat") } 
 
   scenario "an unauthenticated user can not see the boat page" do
     logout(:user)
@@ -44,6 +44,7 @@ feature "User views a boat page and sees boat data" do
     expect(page).to have_content("50HP")  
     expect(page).to have_content("$9,999")     
     expect(page).to have_content("$5,540")     
+    expect(page).to have_content("this is a message about the boat")      
   end
  
 
