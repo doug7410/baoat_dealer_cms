@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004053952) do
-
-  create_table "boat_brands", force: true do |t|
-    t.string   "name"
-    t.string   "logo"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "active",      default: true
-  end
+ActiveRecord::Schema.define(version: 20141029013342) do
 
   create_table "boat_main_models", force: true do |t|
     t.string   "name"
@@ -31,6 +22,56 @@ ActiveRecord::Schema.define(version: 20141004053952) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active",            default: true
+  end
+
+  create_table "boat_motor_packages", force: true do |t|
+    t.integer  "boat_id"
+    t.integer  "motor_id"
+    t.integer  "price_in_cents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "brand_id"
+  end
+
+  create_table "boat_standard_features", force: true do |t|
+    t.integer "boat_id"
+    t.integer "standard_feature_id"
+  end
+
+  create_table "boats", force: true do |t|
+    t.integer  "brand_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "year"
+    t.integer  "boat_only_price"
+    t.text     "message"
+    t.integer  "series_id"
+  end
+
+  create_table "brands", force: true do |t|
+    t.string   "name"
+    t.string   "logo"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",      default: true
+  end
+
+  create_table "motors", force: true do |t|
+    t.string   "name"
+    t.string   "hp"
+    t.integer  "shaft"
+    t.string   "motor_type"
+    t.integer  "brand_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "standard_features", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
