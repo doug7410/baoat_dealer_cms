@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(email: "user@email.com", password: "password", password_confirmation: "password")
+
 carolina_skiff = Brand.create(name: "Carolina Skiff", logo: "carolina_skiff_logo.jpg", description: "A great skiff company!")
 evinrude = Brand.create(name: "Evinrude", logo: "evinrude_logo.jpg", description: "A great motor company!")
 mercury = Brand.create(name: "Mercury", logo: "mercury_logo.jpg", description: "A great motor company!")
@@ -22,6 +24,10 @@ BoatMotorPackage.create(boat: jvx16, motor: motor2, price_in_cents: 999900, bran
 BoatMotorPackage.create(boat: jvx16, motor: motor3, price_in_cents: 999900, brand: mercury)
 BoatMotorPackage.create(boat: jvx16, motor: motor4, price_in_cents: 999900, brand: mercury)
 
-15.times do
+25.times do
   BoatStandardFeature.create(boat: jvx16, standard_feature: Fabricate(:standard_feature))
+end
+
+15.times do
+  BoatUpgradeOption.create(boat: jvx16, upgrade_option: Fabricate(:upgrade_option))
 end
