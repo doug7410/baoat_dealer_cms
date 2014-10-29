@@ -10,7 +10,7 @@ carolina_skiff = Brand.create(name: "Carolina Skiff", logo: "carolina_skiff_logo
 evinrude = Brand.create(name: "Evinrude", logo: "evinrude_logo.jpg", description: "A great motor company!")
 mercury = Brand.create(name: "Mercury", logo: "mercury_logo.jpg", description: "A great motor company!")
 
-jvx16 = Boat.create(brand: carolina_skiff, name: "JVX16", year: "2014", boat_only_price: 1558500, message: "here is some message")
+jvx16 = Boat.create(brand: carolina_skiff, name: "JVX16", year: "2014", price_in_cents: 554000, message: "here is some message")
 
 motor1 = Motor.create(name: "50DPX", hp: "60", shaft: 25, motor_type: "ETEC", brand: evinrude)
 motor2 = Motor.create(name: "60DPX", hp: "70", shaft: 25, motor_type: "ETEC", brand: evinrude)

@@ -29,9 +29,9 @@
                               .row
                                 .col-xs-6.boat-only
                                   %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
+                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "boat_only"}/
                                     Boat Only
-                                  .motor-group-price $15,895
+                                  .motor-group-price="#{number_to_currency(@boat.price_in_cents / 100.0 , precision: 0)}"
                               - @package_motor_brands.each do |brand|
                                 .col-xs-6.motor-group-container
                                   %h5= brand.name
