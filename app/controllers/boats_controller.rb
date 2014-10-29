@@ -7,8 +7,5 @@ class BoatsController < ApplicationController
     packages = BoatMotorPackage.where(boat: @boat).all
 
     @package_motor_brands = packages.map(&:brand).uniq
-    
-    # @package_motor_brands = packages.map { |p| p.motor.brand }
-    # binding.pry
   end
 end
