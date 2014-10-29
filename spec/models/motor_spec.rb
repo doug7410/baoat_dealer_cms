@@ -6,4 +6,7 @@ describe Motor do
   it { should validate_presence_of(:shaft)} 
   it { should validate_presence_of(:motor_type)} 
   it { should validate_presence_of(:brand)} 
+
+  
+
 end

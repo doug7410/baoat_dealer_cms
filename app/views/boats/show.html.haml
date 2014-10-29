@@ -32,15 +32,16 @@
                                     %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "motor_package_id"}/
                                     Boat Only
                                   .motor-group-price $15,895
-                            - @packages.each do |package|
-                              .col-xs-6.motor-group-container
-                                %h5= package.motor.brand.name
-                                .row
-                                  .col-xs-12.motor-group
-                                    %label.motor-group-name 
-                                      %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "#{package.id}"}/
-                                      50HP ETEC
-                                    .motor-group-price $15,895
+                              - @package_motor_brands.each do |brand|
+                                .col-xs-6.motor-group-container
+                                  %h5= brand.name
+                                  -@boat.motor_packages(brand).each do |motor_package|
+                                    .row
+                                      .col-xs-12.motor-group
+                                        %label.motor-group-name 
+                                          %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "#{motor_package.id}"}/
+                                          ="#{motor_package.motor.hp}HP #{motor_package.motor.motor_type}"
+                                        .motor-group-price="#{number_to_currency(motor_package.price_in_cents / 100, precision: 0)}"
                       .row
                         .col-xs-12
                           %h4.header.section-header.blue Total
