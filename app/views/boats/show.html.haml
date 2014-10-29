@@ -29,7 +29,7 @@
                               .row
                                 .col-xs-6.boat-only
                                   %label.motor-group-name 
-                                    %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "boat_only"}/
+                                    %input.motor-package-radio{:name => "motorPackages", :type => "radio", :value => "#{@boat.price_in_cents}"}/
                                     Boat Only
                                   .motor-group-price="#{display_price(@boat.price_in_cents)}"
                               - @package_motor_brands.each do |brand|
@@ -39,13 +39,13 @@
                                     .row
                                       .col-xs-12.motor-group
                                         %label.motor-group-name 
-                                          %input#motorPackageRadios1{:name => "motorPackages", :type => "radio", :value => "#{motor_package.id}"}/
+                                          %input.motor-package-radio{:name => "motorPackages", :type => "radio", :value => "#{motor_package.price_in_cents}"}/
                                           ="#{motor_package.motor.hp}HP #{motor_package.motor.motor_type}"
                                         .motor-group-price="#{display_price(motor_package.price_in_cents)}"
                       .row
                         .col-xs-12
                           %h4.header.section-header.blue Total
-                          %input.total-box{"type" => "text"}  
+                          %input.total-box{"type" => "text", "value" => "", "placeholder" => "$9,999" }  
                           %p= "#{@boat.message}"                     
                     / right container
                     .col-sm-6
@@ -63,4 +63,4 @@
                               %td="#{display_price(option.price_in_cents)}"
                               %td="#{display_price(option.cost_in_cents)}"
                           
-                    
+%script{:src => "/boat_quote_calculator.js"}                  
