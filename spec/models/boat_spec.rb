@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Boat do
   
   it { should have_many(:standard_features)}
+  it { should have_many(:upgrade_options)} 
 
   it "returns all standard features associated with the boat" do
     jvx16 = Fabricate(:boat)

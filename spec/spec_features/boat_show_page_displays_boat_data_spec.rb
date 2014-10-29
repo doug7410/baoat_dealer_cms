@@ -8,7 +8,7 @@ feature "User views a boat page and sees boat data" do
 
   background do
     bob = Fabricate(:user)
-    login_as(bob, :scope => :user)
+    login_as(bob, :scope => :user) 
   end
 
   given(:carolina_skiff) { Fabricate(:brand) }
@@ -45,6 +45,19 @@ feature "User views a boat page and sees boat data" do
     expect(page).to have_content("$9,999")     
     expect(page).to have_content("$5,540")     
     expect(page).to have_content("this is a message about the boat")      
+  end
+
+  scenario "[a logged in user can see the upgrade options]" do
+    bimini_top = Fabricate(:upgrade_option, name: "Bimini Top", price_in_cents: 25000, cost_in_cents: 15700)
+    rod_holders = Fabricate(:upgrade_option, name: "Rod Holders", price_in_cents: 22000, cost_in_cents: 15400)
+    jvx16.upgrade_options << [bimini_top, rod_holders]
+
+    visit boat_path(jvx16)
+     
+    expect(page).to have_content("Bimini Top")
+    expect(page).to have_content("Rod Holders")
+    expect(page).to have_content("$220")
+    expect(page).to have_content("$157")
   end
  
 
